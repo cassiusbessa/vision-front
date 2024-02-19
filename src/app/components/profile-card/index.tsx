@@ -6,15 +6,16 @@ export default function ProfileCard({
   className, userFullName, userImage, userTitle, bio,
 }: { className: string, userFullName: string, userImage: string, userTitle: string, bio: string }) {
   return (
-    <div className={`card lg:card-side bg-base-100 shadow-xl ${className}`}>
-      <figure className="h-1/2 lg:h-full">
-        <img src={userImage} alt="User profile" />
+    <div className={`card md:card-side bg-base-100 shadow-xl ${className}`}>
+      <figure className="h-2/6 w-full md:h-full md:w-1/2">
+        <div className="bg-base-200 md:h-4/6 md:w-full" />
+        <img src={userImage} alt="User profile" className="h-full w-full md:w-11/12" />
       </figure>
-      <div className="card-body h-1/2 lg:h-full">
+      <div className="card-body h-4/6 w-full md:h-full md:w-1/2">
         <article className="prose text-ellipsis overflow-hidden ...">
-          <h1 className="card-title text-6xl font-bold my-1">{userFullName}</h1>
-          <h2 className="text-3xl my-6">{userTitle}</h2>
-          <p className="whitespace-pre-line text-xl container">{bio}</p>
+          <h1 className="card-title font-bold my-1 sm:text-6xl">{userFullName}</h1>
+          <h2 className="my-6 sm:text-3xl">{userTitle}</h2>
+          <p className="whitespace-pre-line sm:text-xl">{bio}</p>
         </article>
       </div>
     </div>
@@ -26,7 +27,7 @@ ProfileCard.defaultProps = {
   className: '',
   userImage: 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg',
   userTitle: 'Software Engineer',
-  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nAliquam at ipsumeu nunc commodo posuere et sit amet ligula. consectetur adipiscing elit.\nAliquam at ipsumeu nunc commodo posuere et sit amet ligula. aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam atipsumeu nunc commodo posuere et sit amet ligula. consectetur adipiscing elit.\nAliquam at ipsumeu nunc commodo posuere et sit amet ligula. aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
 };
 
 ProfileCard.propTypes = {
