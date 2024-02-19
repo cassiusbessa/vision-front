@@ -1,5 +1,6 @@
 import React from 'react';
 import MobileHeader from './mobile-header';
+import ProfileIconDropDown from './profile-icon-dropdown';
 
 export default function Header() {
   return (
@@ -16,11 +17,7 @@ export default function Header() {
         </ul>
       </div>
       <div className="navbar-end">
-        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-          <div className="w-10 rounded-full">
-            <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-          </div>
-        </div>
+        <ProfileIconDropDown />
       </div>
     </div>
   );
