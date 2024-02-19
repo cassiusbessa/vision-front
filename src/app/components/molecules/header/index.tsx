@@ -10,7 +10,7 @@ export default function Header() {
         <a className="btn btn-ghost text-xl" href="/">daisyUI</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 text-xl">
           <li><a href="/voce">Para você</a></li>
           <li><a href="/descobrir">Descobrir</a></li>
           <li><a href="/carreira">Carreiras</a></li>
