@@ -11,7 +11,7 @@ export default function Home() {
     <div className={`${inter.className} bg-base-200 flex flex-col items-center min-h-screen`}>
       <Header />
       <ProfileCard className="my-8 md:h-[32rem] w-11/12 h-[32rem]" />
-      <ProjectCard />
+      <ProjectCard className="my-8 w-11/12 h-[24rem] md:h-80" />
     </div>
   );
 }
