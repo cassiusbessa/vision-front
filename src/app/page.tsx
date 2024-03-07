@@ -4,6 +4,7 @@ import Header from './components/header';
 import ProfileCard from './components/profile-card';
 import { Project } from './interfaces';
 import ProjectContainer from './components/project-container';
+import { StarProject } from './components/project';
 
 const inter = Josefin_Sans({ subsets: ['latin'] });
 const projectsMock: Project[] = [
@@ -16,7 +17,7 @@ const projectsMock: Project[] = [
       github: 'https://github.com/projeto1',
       demo: 'https://demo.projeto1.com',
     },
-    image: 'imagem1.jpg',
+    image: 'https://www.hefestoengenhariamt.com.br/wp-content/uploads/2019/07/projeto-de-engenharia-cuiaba.jpg',
   },
   {
     id: '2',
@@ -35,8 +36,9 @@ export default function Home() {
   return (
     <div className={`${inter.className} bg-base-200 flex flex-col items-center min-h-screen`}>
       <Header />
-      <ProfileCard className="mt-8 md:h-[32rem] w-11/12 h-[32rem]" />
-      <ProjectContainer projects={projectsMock} className="w-11/12 my-12" />
+      <ProfileCard className="mt-8 md:h-[32rem] w-11/12 h-[32rem] bg-base-100" />
+      <StarProject project={projectsMock[0]} className="w-11/12 my-12 h-96 md:h-80 bg-base-300" />
+      <ProjectContainer projects={projectsMock} className="w-11/12 my-12 bg-base-100" />
     </div>
   );
 }

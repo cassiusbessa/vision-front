@@ -6,7 +6,7 @@ export default function ProfileCard({
   className, userFullName, userImage, userTitle, bio,
 }: { className: string, userFullName: string, userImage: string, userTitle: string, bio: string }) {
   return (
-    <div className={`card md:card-side bg-base-100 shadow-xl ${className}`}>
+    <div className={`card md:card-side shadow-xl ${className}`}>
       <figure className="h-2/6 w-full md:h-full md:w-1/2">
         <div className="bg-base-200 md:h-4/6 md:w-full" />
         <img src={userImage} alt="User profile" className="h-full w-full md:w-11/12" />
