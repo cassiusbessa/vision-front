@@ -1,26 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ProjectInfo } from '@/app/interfaces';
 import ProjectCardTags from './project-card-tags';
 import ProjectCardLinks from './project-card-links';
-import { Project } from '../../interfaces';
+import ProjectAuthor from './project-author';
 
-export default function ProjectCard({ className, project }: { className: string,
-  project: Project }) {
+export default function ProjectCard({ className, projectInfo, profile }: { className: string,
+  projectInfo: ProjectInfo, profile: boolean }) {
   return (
     <div className={`card bg-base-100 shadow-xl ${className}`}>
       <figure className="h-3/5 overflow-hidden">
-        <img src={project.image && 'https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg'} alt="Shoes" className="h-full w-full object-cover" />
+        <img src={projectInfo.project.image && 'https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg'} alt="Shoes" className="h-full w-full object-cover" />
       </figure>
-      <div className="card-body flex flex-col justify-between p-4 h-2/5">
+      <div className="card-body flex flex-col justify-between p-4 pb-0 h-2/5">
         <article className="prose text-ellipsis overflow-hidden ...">
           <h3 className="card-title">
-            {project.title}
+            {projectInfo.project.title}
           </h3>
-          <p className="whitespace-pre-line">{project.description}</p>
+          <p className="whitespace-pre-line">{projectInfo.project.description}</p>
         </article>
         <div className="card-actions justify-between">
-          <ProjectCardLinks />
-          <ProjectCardTags tags={project.tags} />
+          {profile ? (
+            <ProjectCardLinks links={projectInfo.project.links} />
+          ) : <ProjectAuthor user={projectInfo.user} />}
+          <ProjectCardTags tags={projectInfo.project.tags} />
         </div>
       </div>
     </div>
@@ -29,30 +32,44 @@ export default function ProjectCard({ className, project }: { className: string,
 
 ProjectCard.defaultProps = {
   className: '',
-  project: {
-    id: '1',
-    title: 'Super Project',
-    description: 'This is a super project',
-    tags: ['best', 'project'],
-    links: {
-      github: 'github.com',
-      demo: 'demo.com',
+  profile: false,
+  projectInfo: {
+    project: {
+      id: '',
+      title: '',
+      description: '',
+      tags: [],
+      links: {
+        github: '',
+        demo: '',
+      },
+      image: '',
     },
-    image: 'https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg',
+    user: {
+      fullName: '',
+      image: '',
+    },
   },
 };
 
 ProjectCard.propTypes = {
   className: PropTypes.string,
-  project: PropTypes.shape({
-    id: PropTypes.string,
-    title: PropTypes.string,
-    description: PropTypes.string,
-    tags: PropTypes.arrayOf(PropTypes.string),
-    links: PropTypes.shape({
-      github: PropTypes.string,
-      demo: PropTypes.string,
+  projectInfo: PropTypes.shape({
+    project: PropTypes.shape({
+      id: PropTypes.string,
+      title: PropTypes.string,
+      description: PropTypes.string,
+      tags: PropTypes.arrayOf(PropTypes.string),
+      links: PropTypes.shape({
+        github: PropTypes.string,
+        demo: PropTypes.string,
+      }),
+      image: PropTypes.string,
     }),
-    image: PropTypes.string,
+    user: PropTypes.shape({
+      fullName: PropTypes.string,
+      image: PropTypes.string,
+    }),
   }),
+  profile: PropTypes.bool,
 };
