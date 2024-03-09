@@ -15,7 +15,7 @@ export default function StarProject({ className, project }: { className: string,
         </article>
         <div className="flex-grow" />
         <div className="hidden md:flex justify-between align-bottom">
-          <ProjectCardLinks />
+          <ProjectCardLinks links={project.links} />
           <ProjectCardTags tags={project.tags} />
         </div>
       </div>
