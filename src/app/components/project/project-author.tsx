@@ -1,7 +1,7 @@
 import React from 'react';
 import { User } from '@/app/interfaces';
 
-export default function ProjectAuthor({ user }: { user: User }) {
+export default function ProjectAuthor({ user, projectName }: { user: User, projectName: string }) {
   return (
     <div className="author-info flex items-center">
       <div className="w-10">
@@ -9,6 +9,7 @@ export default function ProjectAuthor({ user }: { user: User }) {
       </div>
       <div className="ml-2">
         <h4>{user.fullName}</h4>
+        <p className="text-xs">{projectName}</p>
       </div>
     </div>
   );

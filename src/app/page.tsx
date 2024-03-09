@@ -1,11 +1,8 @@
 import React from 'react';
-import { Josefin_Sans } from 'next/font/google';
 import Header from './components/header';
-import ProfileCard from './components/profile-card';
 import { ProjectInfo } from './interfaces';
-import { ProjectProfileContainer, StarProject } from './components/project';
+import ProjectPostCard from './components/project/project-post-card';
 
-const inter = Josefin_Sans({ subsets: ['latin'] });
 const projectsMock: ProjectInfo[] = [
   {
     user: {
@@ -15,7 +12,7 @@ const projectsMock: ProjectInfo[] = [
     project: {
       id: '1',
       title: 'Projeto 1',
-      description: 'Descrição do Projeto 1',
+      description: 'Descrição do Projeto 1 é um projeto muito bom, sensacional ele foi feito para dar certo é o melhor projeto que você vai ver na sua vida, acredite em mim, eu sou um desenvolvedor muito bom e sei do que estou falando.',
       tags: ['tag1', 'tag2'],
       links: {
         github: 'https://github.com/projeto1',
@@ -45,11 +42,10 @@ const projectsMock: ProjectInfo[] = [
 
 export default function Home() {
   return (
-    <div className={`${inter.className} bg-base-200 flex flex-col items-center min-h-screen`}>
+    <div className="bg-base-200 flex flex-col items-center min-h-screen h-screen overflow-y-auto">
       <Header />
-      <ProfileCard className="mt-8 md:h-[32rem] w-11/12 h-[32rem] bg-base-100" />
-      <StarProject project={projectsMock[0].project} className="w-11/12 my-12 h-96 md:h-80 bg-base-300" />
-      <ProjectProfileContainer projectsInfo={projectsMock} className="w-11/12 my-12 bg-base-100" />
+      <ProjectPostCard projectInfo={projectsMock[0]} className="h-4/5 m-8" />
+      <ProjectPostCard projectInfo={projectsMock[1]} className="h-4/5" />
     </div>
   );
 }
