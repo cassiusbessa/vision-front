@@ -6,13 +6,10 @@ import ProjectCardTags from './project-card-tags';
 import ProjectAuthor from './project-author';
 import ProjectReactionsBar from './project-reactions-bar';
 import ProjectPostActions from './project-post-actions';
-import ProjectPostAddComment from './project-post-add-comment';
 
 export default function ProjectPostCard({ className, projectInfo }: { className: string,
   projectInfo: ProjectInfo }) {
   const [showMore, setShowMore] = useState(false);
-  const [comment, setComment] = useState('');
-  const [showAddComment, setShowAddComment] = useState(false);
   return (
     <div className={`card bg-base-100 shadow-xl w-3/4 md:w-1/2 ${className}`}>
       <div className="card-header">
@@ -46,8 +43,7 @@ export default function ProjectPostCard({ className, projectInfo }: { className:
         heart: 15, comment: 0, share: 0, lastUserReactionFullName: 'Cássius Bessa',
       }}
       />
-      <ProjectPostActions showAddComment={showAddComment} setShowAddComment={setShowAddComment} />
-      {showAddComment && (<ProjectPostAddComment comment={comment} setComment={setComment} />)}
+      <ProjectPostActions />
     </div>
   );
 }
