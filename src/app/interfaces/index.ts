@@ -21,3 +21,16 @@ export type ProjectInfo = {
   project: Project;
   user: User;
 };
+
+export type ReactionsCount = {
+  heart: number;
+  comment: number;
+  share: number;
+  lastUserReactionFullName?: string;
+};
+
+export type Comment = {
+  user: User;
+  content: string;
+  date: string;
+};

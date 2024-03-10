@@ -21,8 +21,9 @@ export default function ProjectCard({ className, projectInfo, profile }: { class
         </article>
         <div className="card-actions justify-between">
           {profile ? (
-            <ProjectCardLinks links={projectInfo.project.links} />
-          ) : <ProjectAuthor user={projectInfo.user} projectName={projectInfo.project.title} />}
+
+            <ProjectAuthor user={projectInfo.user} projectName={projectInfo.project.title} />
+          ) : <ProjectCardLinks links={projectInfo.project.links} /> }
           <ProjectCardTags tags={projectInfo.project.tags} />
         </div>
       </div>

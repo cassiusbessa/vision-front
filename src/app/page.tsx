@@ -44,7 +44,7 @@ export default function Home() {
   return (
     <div className="bg-base-200 flex flex-col items-center min-h-screen h-screen overflow-y-auto">
       <Header />
-      <ProjectPostCard projectInfo={projectsMock[0]} className="h-4/5 m-8" />
+      <ProjectPostCard projectInfo={projectsMock[0]} className="m-8" />
       <ProjectPostCard projectInfo={projectsMock[1]} className="h-4/5" />
     </div>
   );
