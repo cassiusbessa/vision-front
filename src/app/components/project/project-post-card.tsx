@@ -12,6 +12,7 @@ export default function ProjectPostCard({ className, projectInfo }: { className:
   projectInfo: ProjectInfo }) {
   const [showMore, setShowMore] = useState(false);
   const [comment, setComment] = useState('');
+  const [showAddComment, setShowAddComment] = useState(false);
   return (
     <div className={`card bg-base-100 shadow-xl w-3/4 md:w-1/2 ${className}`}>
       <div className="card-header">
@@ -45,8 +46,8 @@ export default function ProjectPostCard({ className, projectInfo }: { className:
         heart: 15, comment: 0, share: 0, lastUserReactionFullName: 'Cássius Bessa',
       }}
       />
-      <ProjectPostActions />
-      <ProjectPostAddComment comment={comment} setComment={setComment} />
+      <ProjectPostActions showAddComment={showAddComment} setShowAddComment={setShowAddComment} />
+      {showAddComment && (<ProjectPostAddComment comment={comment} setComment={setComment} />)}
     </div>
   );
 }

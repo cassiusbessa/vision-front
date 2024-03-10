@@ -7,7 +7,7 @@ export default function ProjectPostAddComment({ comment, setComment }:
   return (
     <div className="flex items-center justify-between p-4">
       <textarea
-        className="w-full textarea resize-none"
+        className="w-full textarea textarea-bordered resize-none"
         placeholder="Adicione um comentário"
         value={comment}
         onChange={(e) => setComment(e.target.value)}
