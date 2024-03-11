@@ -33,4 +33,5 @@ export type Comment = {
   user: User;
   content: string;
   date: string;
+  replies: Comment[];
 };

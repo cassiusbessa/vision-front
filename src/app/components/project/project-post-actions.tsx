@@ -1,11 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { GrSend } from 'react-icons/gr';
 import { CiHeart } from 'react-icons/ci';
 import { FaRegComment } from 'react-icons/fa6';
+import { commentsMock } from '@/app/mocks';
 import ProjectPostAddComment from './project-post-add-comment';
+import ProjectPostComment from './project-post-comment';
 
-export default function ProjectPostActions() {
-  const [showAddComment, setShowAddComment] = useState(false);
+export default function ProjectPostActions({ showAddComment, setShowAddComment }:
+{ showAddComment: boolean, setShowAddComment: (showAddComment: boolean) => void }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const focusTextarea = () => {
@@ -40,7 +42,13 @@ export default function ProjectPostActions() {
           <span className="hidden md:block">Enviar</span>
         </button>
       </div>
-      {showAddComment && (<ProjectPostAddComment textareaRef={textareaRef} />)}
+      {showAddComment && (
+        <>
+          <ProjectPostAddComment textareaRef={textareaRef} />
+          <ProjectPostComment comment={commentsMock[0]} />
+          <ProjectPostComment comment={commentsMock[1]} />
+        </>
+      )}
     </div>
   );
 }

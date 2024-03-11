@@ -9,6 +9,7 @@ import ProjectPostActions from './project-post-actions';
 
 export default function ProjectPostCard({ className, projectInfo }: { className: string,
   projectInfo: ProjectInfo }) {
+  const [showAddComment, setShowAddComment] = useState(false);
   const [showMore, setShowMore] = useState(false);
   return (
     <div className={`card bg-base-100 shadow-xl w-3/4 md:w-1/2 ${className}`}>
@@ -39,11 +40,14 @@ export default function ProjectPostCard({ className, projectInfo }: { className:
       <figure className="max-h-80 overflow-hidden">
         <img src={projectInfo.project.image || 'https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg'} alt="Shoes" className="max-h-96 w-full object-cover" />
       </figure>
-      <ProjectReactionsBar reactionsCount={{
-        heart: 15, comment: 0, share: 0, lastUserReactionFullName: 'Cássius Bessa',
-      }}
+      <ProjectReactionsBar
+        reactionsCount={{
+          heart: 15, comment: 0, share: 0, lastUserReactionFullName: 'Cássius Bessa',
+        }}
+        showAddComment={showAddComment}
+        setShowAddComment={setShowAddComment}
       />
-      <ProjectPostActions />
+      <ProjectPostActions showAddComment={showAddComment} setShowAddComment={setShowAddComment} />
     </div>
   );
 }
