@@ -12,7 +12,7 @@ export default function ProjectPostCard({ className, projectInfo }: { className:
   const [showAddComment, setShowAddComment] = useState(false);
   const [showMore, setShowMore] = useState(false);
   return (
-    <div className={`card bg-base-100 shadow-xl w-3/4 md:w-1/2 ${className}`}>
+    <div className={`card bg-base-100 shadow-xl w-full ${className}`}>
       <div className="card-header">
         <div className="info flex justify-between items-center p-2">
           <ProjectAuthor user={projectInfo.user} projectName={projectInfo.project.title} />

@@ -80,7 +80,7 @@ export const commentsMock: Comment[] = [
       fullName: 'Joãozinho da Silva',
       image: 'https://avatars.githubusercontent.com/u/3?v=4',
     },
-    content: 'Comentário 2',
+    content: 'Nossa! Que projeto incrível! Parabéns! 🚀 É o melhor projeto do mundo, muito bom mesmo!aaaaafhfef fhe8fhksdnfs8efewh fhe8fhe8fh dsfsadwqr554 vsdvsndgew ',
     date: '25 de Fevereiro, 2024',
     replies: [
       {
