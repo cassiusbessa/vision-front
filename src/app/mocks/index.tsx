@@ -1,4 +1,12 @@
+import avatar from '@/app/assets/avatar.png';
 import { Comment, ProjectInfo } from '../interfaces';
+
+export const userMock = {
+  fullName: 'Fulano de Tal',
+  title: 'Desenvolvedor Front-end',
+  bio: 'Desenvolvedor Front-end, apaixonado por tecnologia e inovação. Sempre buscando aprender e compartilhar conhecimento.',
+  image: avatar.src,
+};
 
 export const projectsMock: ProjectInfo[] = [
   {
