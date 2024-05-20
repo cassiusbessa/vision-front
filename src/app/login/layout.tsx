@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Metadata } from 'next';
 import { Josefin_Sans } from 'next/font/google';
 import '../globals.css';
