@@ -35,3 +35,9 @@ export type Comment = {
   date: string;
   replies: Comment[];
 };
+
+export type FrameWork = {
+  id: string;
+  name: string;
+  image: string;
+};

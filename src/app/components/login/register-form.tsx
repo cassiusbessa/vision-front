@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import React from 'react';
-import DefaultInput from './default-input';
+import DefaultInput from '../input/default-form-input';
 
 function RegisterForm() {
   const { register, handleSubmit } = useForm();

@@ -4,7 +4,7 @@ import ProfileIconDropDown from './profile-icon-dropdown';
 
 export default function Header() {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-cover bg-gradient-to-b from-[#291D32] via-[#392039] to-[#291D32]">
       <div className="navbar-start">
         <MobileHeader />
         <a className="btn btn-ghost text-xl" href="/">daisyUI</a>
