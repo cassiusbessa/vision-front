@@ -49,7 +49,7 @@ function ProfileForm() {
       <DefaultInput register={register} type="text" placeholder="Nome Exibido" autoComplete="name" data="name" />
       <DefaultInput register={register} type="text" placeholder="Título Profissional" autoComplete="title" data="title" />
       <textarea className="w-full border-2 rounded-3xl p-4 pl-7 m-2 bg-[#4f4f4f] placeholder-white" placeholder="Descrição" {...register('description', { required: true })} />
-      <FrameworksDropdown frameWorks={frameworks} register={register} />
+      <FrameworksDropdown frameWorks={frameworks} />
       <button
         type="submit"
         className="btn btn-secondary bg-[#C14080] hover:scale-[1.01] rounded-3xl mt-3 w-full"

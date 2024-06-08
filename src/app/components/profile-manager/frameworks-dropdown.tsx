@@ -1,27 +1,80 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FrameWork } from '@/app/interfaces';
-import { FieldValues, UseFormRegister } from 'react-hook-form';
-import DefaultCheckBox from '../input/default-form-checkbox';
+import Select, { GroupBase, StylesConfig } from 'react-select';
 
-function FrameworksDropdown({ frameWorks, register }:
-{ frameWorks: FrameWork[], register: UseFormRegister<FieldValues> }) {
+function FrameworksDropdown({ frameWorks }: { frameWorks: FrameWork[] }) {
+  const [
+    selectedOptions,
+    setSelectedOptions,
+  ] = useState<string[]>();
+
+  const handleChange = (e: any) => {
+    setSelectedOptions(e.map((i: { value: string; }) => i.value));
+  };
+
+  const options = frameWorks.map(
+    ({ name, id }) => ({ value: id, label: name }),
+  ) as unknown as readonly (string | GroupBase<string>)[];
+
+  const colourStyles: StylesConfig = {
+    control: (styles: any) => ({
+      ...styles, backgroundColor: '#4f4f4f', color: 'white', boxShadow: 'none', border: 'none', caretColor: 'white',
+    }),
+    placeholder: (styles, { isFocused }) => ({ ...styles, color: isFocused ? 'gray' : 'white' }),
+    option: (styles: any) => ({
+      ...styles,
+      backgroundColor: 'transparent',
+      ':hover': {
+        ...styles[':hover'],
+        backgroundColor: '#3C3C3C',
+        cursor: 'pointer',
+      },
+    }),
+    menu: (styles: any) => ({ ...styles, backgroundColor: '#4f4f4f', left: '0' }),
+    input: (styles: any) => ({
+      ...styles, outline: 'none', cursor: 'text', color: 'white',
+    }),
+    indicatorsContainer: (styles: any) => ({ ...styles, padding: '0', color: 'red' }),
+    multiValue: (styles: any) => ({
+      ...styles, backgroundColor: '#301E35', borderRadius: '4px', backgroundImage: 'linear-gradient(90deg, #8042BF, #B44480)',
+    }),
+    multiValueLabel: (styles: any) => ({ ...styles, color: 'white' }),
+    multiValueRemove: (styles: any) => ({
+      ...styles,
+      ':hover': {
+        ...styles[':hover'],
+        backgroundColor: 'none',
+        color: 'white',
+      },
+      color: '#ffffffd1',
+    }),
+    clearIndicator: (styles: any) => ({
+      ...styles,
+      ':hover': {
+        ...styles[':hover'],
+        color: 'white',
+      },
+      color: '#ffffffd1',
+    }),
+    dropdownIndicator: (styles: any) => ({
+      ...styles,
+      ':hover': {
+        ...styles[':hover'],
+        color: 'white',
+      },
+      color: '#ffffffd1',
+    }),
+  };
   return (
-    <details className="dropdown w-full border-2 rounded-3xl m-2 bg-[#4f4f4f] flex">
-      <summary className="btn w-full p-0  bg-[#4f4f4f] hover:bg-[#4f4f4f] flex justify-start rounded-3xl">
-        <span className="text-start start-0 pl-8 text-white">Principais Frameworks</span>
-      </summary>
-      <ul className="p-2 shadow dropdown-content z-[1] bg-base-100 rounded-box w-52 max-h-32 overflow-y-scroll flex flex-col">
-        {frameWorks.map((framework) => (
-          <li key={framework.id} className="w-full">
-            <DefaultCheckBox
-              label={framework.name}
-              data={framework.id}
-              register={register}
-            />
-          </li>
-        ))}
-      </ul>
-    </details>
+    <Select
+      options={options}
+      className="w-full border-2 rounded-3xl p-4 pl-7 m-2 bg-[#4f4f4f] placeholder-white"
+      styles={colourStyles}
+      isMulti
+      isSearchable
+      placeholder="Principais frameworks"
+      onChange={(e: any) => handleChange(e)}
+    />
   );
 }
 
