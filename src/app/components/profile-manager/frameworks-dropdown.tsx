@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { Dispatch } from 'react';
 import { FrameWork } from '@/app/interfaces';
 import Select, { GroupBase, StylesConfig } from 'react-select';
 
-function FrameworksDropdown({ frameWorks }: { frameWorks: FrameWork[] }) {
-  const [
-    selectedOptions,
-    setSelectedOptions,
-  ] = useState<string[]>();
+type Props = {
+  frameWorks: FrameWork[],
+  setSelectedFrameworks: Dispatch<React.SetStateAction<string[] | undefined>>
+};
 
+function FrameworksDropdown({ frameWorks, setSelectedFrameworks }: Props) {
   const handleChange = (e: any) => {
-    setSelectedOptions(e.map((i: { value: string; }) => i.value));
+    setSelectedFrameworks(e.map((i: { value: string; }) => i.value));
   };
 
   const options = frameWorks.map(
