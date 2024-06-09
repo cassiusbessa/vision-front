@@ -10,10 +10,10 @@ function RegisterForm() {
   };
 
   return (
-    <form className="h-full" onSubmit={handleSubmit(onSubmit)}>
-        <DefaultInput register={register} type="name" placeholder="Nome" autoComplete='name' data='name' />
-        <DefaultInput register={register} type="email" placeholder="Email" autoComplete='email' data='email' />
-        <DefaultInput register={register} type="password" placeholder="Senha" autoComplete='password' data='password' />
+    <form className="h-full flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
+      <DefaultInput register={register} type="name" placeholder="Nome" autoComplete="name" data="name" />
+      <DefaultInput register={register} type="email" placeholder="Email" autoComplete="email" data="email" />
+      <DefaultInput register={register} type="password" placeholder="Senha" autoComplete="password" data="password" />
       <button
         className="btn btn-secondary bg-[#C14080] hover:scale-[1.01] rounded-3xl mt-3 w-full"
         type="submit"

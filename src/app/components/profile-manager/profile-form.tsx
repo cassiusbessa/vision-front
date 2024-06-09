@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import DefaultInput from '../input/default-form-input';
-import FrameworksDropdown from './frameworks-dropdown';
+import FrameworksDropdown from '../input/frameworks-dropdown';
 
 const frameworks = [
   { id: '1', name: 'React', image: '' },
