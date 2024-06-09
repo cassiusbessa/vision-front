@@ -17,11 +17,12 @@ function FrameworksDropdown({ frameWorks }: { frameWorks: FrameWork[] }) {
   ) as unknown as readonly (string | GroupBase<string>)[];
 
   const colourStyles: StylesConfig = {
-    control: (styles: any) => ({
-      ...styles, backgroundColor: '#4f4f4f', color: 'white', boxShadow: 'none', border: 'none', caretColor: 'white',
+    control: (styles) => ({
+      ...styles, backgroundColor: '#4f4f4f', color: 'white', boxShadow: 'none', border: 'none', caretColor: 'white', padding: '0px',
     }),
+    valueContainer: (styles) => ({ ...styles, padding: '0px' }),
     placeholder: (styles, { isFocused }) => ({ ...styles, color: isFocused ? 'gray' : 'white' }),
-    option: (styles: any) => ({
+    option: (styles) => ({
       ...styles,
       backgroundColor: 'transparent',
       ':hover': {
@@ -30,16 +31,16 @@ function FrameworksDropdown({ frameWorks }: { frameWorks: FrameWork[] }) {
         cursor: 'pointer',
       },
     }),
-    menu: (styles: any) => ({ ...styles, backgroundColor: '#4f4f4f', left: '0' }),
-    input: (styles: any) => ({
+    menu: (styles) => ({ ...styles, backgroundColor: '#4f4f4f', left: '0' }),
+    input: (styles) => ({
       ...styles, outline: 'none', cursor: 'text', color: 'white',
     }),
-    indicatorsContainer: (styles: any) => ({ ...styles, padding: '0', color: 'red' }),
-    multiValue: (styles: any) => ({
+    indicatorsContainer: (styles) => ({ ...styles, padding: '0', color: 'red' }),
+    multiValue: (styles) => ({
       ...styles, backgroundColor: '#301E35', borderRadius: '4px', backgroundImage: 'linear-gradient(90deg, #8042BF, #B44480)',
     }),
-    multiValueLabel: (styles: any) => ({ ...styles, color: 'white' }),
-    multiValueRemove: (styles: any) => ({
+    multiValueLabel: (styles) => ({ ...styles, color: 'white' }),
+    multiValueRemove: (styles) => ({
       ...styles,
       ':hover': {
         ...styles[':hover'],
@@ -48,7 +49,7 @@ function FrameworksDropdown({ frameWorks }: { frameWorks: FrameWork[] }) {
       },
       color: '#ffffffd1',
     }),
-    clearIndicator: (styles: any) => ({
+    clearIndicator: (styles) => ({
       ...styles,
       ':hover': {
         ...styles[':hover'],
@@ -56,7 +57,7 @@ function FrameworksDropdown({ frameWorks }: { frameWorks: FrameWork[] }) {
       },
       color: '#ffffffd1',
     }),
-    dropdownIndicator: (styles: any) => ({
+    dropdownIndicator: (styles) => ({
       ...styles,
       ':hover': {
         ...styles[':hover'],
@@ -68,12 +69,12 @@ function FrameworksDropdown({ frameWorks }: { frameWorks: FrameWork[] }) {
   return (
     <Select
       options={options}
-      className="w-full border-2 rounded-3xl p-4 pl-7 m-2 bg-[#4f4f4f] placeholder-white"
+      className="w-full border-2 rounded-3xl p-4 bg-[#4f4f4f] placeholder-white"
       styles={colourStyles}
       isMulti
       isSearchable
       placeholder="Principais frameworks"
-      onChange={(e: any) => handleChange(e)}
+      onChange={(e) => handleChange(e)}
     />
   );
 }

@@ -13,7 +13,7 @@ function Login() {
 
   return (
     <div className="my-4 w-full flex justify-center">
-      <div className="lg:w-2/5 md:w-1/2 w-2/3 h-fit bg-[#3c3c3c] border border-slate-400 rounded-3xl p-8 shadow-lg backdrop-filter backdrop-blur-sm relative">
+      <div className="w-10/12 max-w-[560px] h-fit bg-[#3c3c3c] border border-slate-400 rounded-3xl py-8 px-4 md:py-8 md:px-12 shadow-lg backdrop-filter backdrop-blur-sm relative">
         <div className="text-center m-3 text-4x1 text-xl font-medium">
           <h1>Seja bem vindo ao</h1>
           <span className="bg-gradient-to-r from-[#8042BF] to-[#B44480] bg-clip-text text-transparent font-extrabold text-4xl">VISION</span>

@@ -12,7 +12,7 @@ function LoginForm() {
   };
 
   return (
-    <form className="h-full" onSubmit={handleSubmit(onSubmit)}>
+    <form className="h-full flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
       <DefaultInput register={register} type="email" placeholder="Email" autoComplete="email" data="email" />
       <DefaultInput register={register} type="password" placeholder="Senha" autoComplete="current-password" data="password" />
       <DefaultCheckBox register={register} label="Lembrar de mim" data="remember" />

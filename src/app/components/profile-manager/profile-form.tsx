@@ -45,10 +45,10 @@ function ProfileForm() {
   };
 
   return (
-    <form className="h-full" onSubmit={handleSubmit(onSubmit)}>
+    <form className="h-full gap-4 flex flex-col" onSubmit={handleSubmit(onSubmit)}>
       <DefaultInput register={register} type="text" placeholder="Nome Exibido" autoComplete="name" data="name" />
       <DefaultInput register={register} type="text" placeholder="Título Profissional" autoComplete="title" data="title" />
-      <textarea className="w-full border-2 rounded-3xl p-4 pl-7 m-2 bg-[#4f4f4f] placeholder-white" placeholder="Descrição" {...register('description', { required: true })} />
+      <textarea className="w-full border-2 rounded-3xl p-4 bg-[#4f4f4f] placeholder-white" placeholder="Descrição" {...register('description', { required: true })} />
       <FrameworksDropdown frameWorks={frameworks} />
       <button
         type="submit"
