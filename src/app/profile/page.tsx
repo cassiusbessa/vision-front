@@ -1,6 +1,6 @@
 import React from 'react';
 import { Josefin_Sans } from 'next/font/google';
-import Header from '../components/header';
+// import Header from '../components/header';
 import ProfileCard from '../components/profile-card';
 import { ProjectProfileContainer, StarProject } from '../components/project';
 import { userMock, projectsMock } from '../mocks';

@@ -9,11 +9,11 @@ export const userMock = {
   fullName: 'Cássius Bessa',
   title: 'Desenvolvedor Full Stack',
   bio: 'Amante de programação e conhecedor do poder transformador de tecnologia. Estudante de Engenharia de Software na 42, uma das 10 faculdades mais inovadoras do mundo. Com maior foco em desenvolvimento backend, busco me especializar cada vez na área de programação e a cada dia me tornar melhor do que fui ontem.',
-  image: "https://cdn.intra.42.fr/users/90c57347ec23a3f42362716a9be49f45/caqueiro.jpg",
+  image: 'https://cdn.intra.42.fr/users/90c57347ec23a3f42362716a9be49f45/caqueiro.jpg',
 };
 
 export const projectsMock: ProjectInfo[] = [
-  { 
+  {
     user: {
       fullName: 'Cássius Bessa',
       image: 'https://cdn.intra.42.fr/users/90c57347ec23a3f42362716a9be49f45/caqueiro.jpg',

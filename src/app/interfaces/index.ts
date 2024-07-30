@@ -9,7 +9,7 @@ export type Project = {
   description: string;
   tags: string[];
   links: ProjectLinks;
-  image?: string;
+  image: string;
 };
 
 export type User = {
