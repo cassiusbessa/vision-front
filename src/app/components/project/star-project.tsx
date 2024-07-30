@@ -20,9 +20,9 @@ export default function StarProject({ className, project }: { className: string,
           <ProjectCardTags tags={project.tags} />
         </div>
       </div>
-      <figure className="h-3/5 w-full md:h-full md:w-1/2">
-        <img src={project.image} alt="Project" className="h-full w-full" />
-      </figure>
+      <figure className="flex justify-center items-center h-3/5 w-full md:h-full md:w-1/2">
+  <img src={project.image} alt="Project" className="max-h-full max-w-full object-contain" />
+</figure>
     </div>
   );
 }
