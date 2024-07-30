@@ -9,7 +9,7 @@ export default function ProfileCard({
     <div className={`card md:card-side shadow-xl ${className}`}>
       <figure className="h-2/6 w-full md:h-full md:w-1/2">
         <div className="bg-base-200 md:h-4/6 md:w-full" />
-        <img src={userImage} alt="User profile" className="h-full w-full md:w-11/12" />
+        <img src={userImage} alt="User profile" className=" max-h-[400px] md:h-full w-full md:w-11/12" />
       </figure>
       <div className="card-body h-4/6 w-full md:h-full md:w-1/2">
         <article className="prose text-ellipsis overflow-hidden ...">

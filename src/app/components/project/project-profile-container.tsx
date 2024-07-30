@@ -11,7 +11,7 @@ export default function ProjectProfileContainer({ className, projectsInfo }: { c
       </article>
       <div className="grid gap-x-4 sm:grid-cols-1 md:grid-cols-2">
         {projectsInfo.map((info) => (
-          <ProjectCard key={info.project.id} projectInfo={info} profile={false} className="my-4 h-[500px] bg-base-200" />
+          <ProjectCard key={info.project.id} projectInfo={info} profile={false} className="my-4 md:h-[500px] h-fit bg-base-200" />
         ))}
       </div>
     </div>
