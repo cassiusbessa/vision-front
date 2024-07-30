@@ -21,7 +21,7 @@ export default function ProjectCard({ className, projectInfo, profile }: { class
           </h3>
           <p className="whitespace-pre-line">{projectInfo.project.description}</p>
         </article>
-        <div className="card-actions justify-between">
+        <div className="card-actions justify-between items-center">
           {profile ? (
 
             <ProjectAuthor user={projectInfo.user} projectName={projectInfo.project.title} />
