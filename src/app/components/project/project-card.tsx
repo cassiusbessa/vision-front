@@ -11,10 +11,10 @@ export default function ProjectCard({ className, projectInfo, profile }: { class
   projectInfo: ProjectInfo, profile: boolean }) {
   return (
     <div className={`card bg-base-100 shadow-xl ${className}`}>
-      <figure className="h-3/5 overflow-hidden">
+      <figure className="h-3/6 overflow-hidden">
         <img src={projectInfo.project.image} alt="Project" className="h-full w-full object-cover" />
       </figure>
-      <div className="card-body flex flex-col justify-between p-4 pb-0 h-2/5">
+      <div className="card-body flex flex-col justify-between p-4 pb-0 h-3/6">
         <article className="prose text-ellipsis overflow-hidden ...">
           <h3 className="card-title">
             {projectInfo.project.title}
